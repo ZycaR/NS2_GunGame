@@ -3,9 +3,20 @@
 	ZycaR (c) 2016
 ]]
 
+Script.Load("lua/bots/gg_bot_GunGameTeamBrain.lua")
+
 if Server then
 
     class 'GunGameTeam' (PlayingTeam)
+
+	function GunGameTeam:GetTeamBrain()
+		if self.brain == nil then
+			self.brain = GunGameTeamBrain()
+			self.brain:Initialize(self.teamName.."-Brain", self:GetTeamNumber())
+		end
+
+		return self.brain
+	end
 
     -- Set nanoshield only once (if its not already active)
     local function ActivateSpawnProtection(player)

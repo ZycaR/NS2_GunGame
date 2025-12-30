@@ -18,9 +18,9 @@ do
     ModLoader.SetupFileHook( "lua/Player_Client.lua", "lua/gg_Player_ClientHooks.lua" , "post" )
     
     -- bots
-    ModLoader.SetupFileHook( "lua/bots/PlayerBot.lua", "lua/bots/gg_bot_PlayerBot.lua" , "post" )
+    ModLoader.SetupFileHook( "lua/bots/PlayerBot_Server.lua", "lua/bots/gg_bot_PlayerBot_Server.lua" , "post" )
 
     -- various fixes for errors
-    ModLoader.SetupFileHook( "lua/bots/PlayerBrain.lua", "lua/gg_ns2fix/gg_PlayerBrain.lua" , "post" )
-    ModLoader.SetupFileHook( "lua/Weapons/Marine/Railgun.lua", "lua/gg_ns2fix/gg_Railgun.lua" , "post" )
+    --ModLoader.SetupFileHook( "lua/bots/PlayerBrain.lua", "lua/gg_ns2fix/gg_PlayerBrain.lua" , "post" )
+    --ModLoader.SetupFileHook( "lua/Weapons/Marine/Railgun.lua", "lua/gg_ns2fix/gg_Railgun.lua" , "post" )
 end
