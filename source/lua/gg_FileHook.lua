@@ -7,6 +7,7 @@ do
     -- Server & Client tweaks
     ModLoader.SetupFileHook( "lua/Player.lua", "lua/gg_PlayerNetVars.lua" , "post" )
     ModLoader.SetupFileHook( "lua/NanoShieldMixin.lua", "lua/gg_NanoShieldMixin.lua" , "post" )
+    ModLoader.SetupFileHook( "lua/MarineVariantMixin.lua", "lua/gg_MarineVariantMixin.lua" , "post" )
 
     -- GUI & HUD tweaks
     
