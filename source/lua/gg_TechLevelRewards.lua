@@ -111,7 +111,7 @@ end
 // Level: Railgun Exosuit
 //
 local function GiveRailgunExo(player)
-    player:ExoLayout("ClawRailgun")
+    player:ExoLayout("RailgunRailgun")
     return Exo.kMapName
 end
 
@@ -119,7 +119,7 @@ end
 // Level: Minigun Exosuit
 //
 local function GiveMinigunExo(player)
-    player:ExoLayout("ClawMinigun")
+    player:ExoLayout("MinigunMinigun")
     return Exo.kMapName
 end
 
