@@ -8,7 +8,38 @@ Script.Load("lua/gg_gui/GUIGunGameProgress.lua")
 
 class 'GUIPlayerResource'
 
-function CreatePlayerResourceDisplay(scriptHandle, hudLayer, frame, style)
+
+GUIPlayerResource.kPersonalResourceIcon = { Width = 0, Height = 0, X = 0, Y = 0 }
+GUIPlayerResource.kPersonalResourceIcon.Width = 32
+GUIPlayerResource.kPersonalResourceIcon.Height = 64
+
+GUIPlayerResource.kPersonalResourceIconSize = Vector(GUIPlayerResource.kPersonalResourceIcon.Width, GUIPlayerResource.kPersonalResourceIcon.Height, 0)
+GUIPlayerResource.kPersonalResourceIconSizeBig = Vector(GUIPlayerResource.kPersonalResourceIcon.Width, GUIPlayerResource.kPersonalResourceIcon.Height, 0) * 1.1
+
+GUIPlayerResource.kPersonalIconPos = Vector(30,-4,0)
+GUIPlayerResource.kPersonalTextPos = Vector(100,4,0)
+GUIPlayerResource.kPresDescriptionPos = Vector(110,4,0)
+
+GUIPlayerResource.kTeam1TextPos = Vector(20, 360, 0)
+GUIPlayerResource.kTeam2TextPos = Vector(20, 540, 0)
+
+GUIPlayerResource.kIconTextXOffset = -20
+
+GUIPlayerResource.kFontSizePersonal = 30
+GUIPlayerResource.kFontSizePersonalBig = 30
+
+GUIPlayerResource.kPulseTime = 0.5
+
+GUIPlayerResource.kFontSizePresDescription = 18
+GUIPlayerResource.kFontSizeResGained = 25
+GUIPlayerResource.kFontSizeTeam = 18
+GUIPlayerResource.kTextFontName = Fonts.kAgencyFB_Small
+GUIPlayerResource.kTresTextFontName = Fonts.kAgencyFB_Small
+GUIPlayerResource.kResGainedFontName = Fonts.kAgencyFB_Small
+
+
+
+function CreatePlayerResourceDisplay(scriptHandle, hudLayer, frame, style, teamNum)
     local result = GUIPlayerResource()
 	
     result.GunGameProgress = GUIGunGameProgress()
@@ -18,14 +49,15 @@ function CreatePlayerResourceDisplay(scriptHandle, hudLayer, frame, style)
 	result.script = scriptHandle
     result.hudLayer = hudLayer
     result.frame = frame
-	result:Initialize(style)
+	result:Initialize(style, teamNum)
 
     return result
 end
 
 // for NS2+ (and other mods) to supply expected child elements
-function GUIPlayerResource:Initialize(style)
+function GUIPlayerResource:Initialize(style, teamNumber)
     self.style = style
+    self.teamNumber = teamNumber
     self.scale = 1
     self.lastPersonalResources = 0
 	

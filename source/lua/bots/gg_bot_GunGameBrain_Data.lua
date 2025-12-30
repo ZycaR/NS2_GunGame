@@ -228,7 +228,7 @@ local function PerformAttackEntity( eyePos, target, lastSeenPos, bot, brain, mov
             doFire = true
         end
         
-        doFire = doFire and bot.aim:UpdateAim(target, aimPos)
+        doFire = doFire and bot.aim:UpdateAim(target, aimPos, kBotAccWeaponGroup.Bullets)
 
     end
     if doFire then
