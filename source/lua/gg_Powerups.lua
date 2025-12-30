@@ -9,9 +9,9 @@ Powerups.kMapName = "powerups"
 
 local networkVars = {}
 kPowerupDrops = {}
-kPowerupDrops[0] = { ClassName = "CatPack", MapName = CatPack.kMapName, Sound = CatPack.kPickupSound }
-kPowerupDrops[1] = { ClassName = "MedPack", MapName = MedPack.kMapName, Sound = MedPack.kHealthSound }
-kPowerupDrops[2] = { ClassName = "AmmoPack", MapName = AmmoPack.kMapName, Sound = AmmoPack.kPickupSound }
+kPowerupDrops[0] = { ClassName = "CatPack", MapName = CatPack.kMapName }
+kPowerupDrops[1] = { ClassName = "MedPack", MapName = MedPack.kMapName }
+kPowerupDrops[2] = { ClassName = "AmmoPack", MapName = AmmoPack.kMapName}
 
 local function TriggerPowerup(self, timePassed)
 
@@ -20,7 +20,7 @@ local function TriggerPowerup(self, timePassed)
        not self:GetHasDrop(position)
     then
         CreateEntity(self.drop.MapName, position)
-        StartSoundEffectAtOrigin(self.drop.Sound, position)
+        --StartSoundEffectAtOrigin(self.drop.Sound, position)
     end
     
     return true
