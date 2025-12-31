@@ -25,7 +25,9 @@ function GunGameBrain:Update( bot, move )
     self.expectedPlayerClass = player:GetClassName()
     self.expectedTeamNumber = player:GetTeamNumber()
 
-    PlayerBrain.Update( self, bot, move )
+    if not player:isa("ReadyRoomPlayer") then
+        PlayerBrain.Update( self, bot, move )
+    end
 end
 
 function GunGameBrain:GetExpectedPlayerClass()

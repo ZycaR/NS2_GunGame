@@ -8,7 +8,7 @@ do
     ModLoader.SetupFileHook( "lua/Player.lua", "lua/gg_PlayerNetVars.lua" , "post" )
     ModLoader.SetupFileHook( "lua/NanoShieldMixin.lua", "lua/gg_NanoShieldMixin.lua" , "post" )
     ModLoader.SetupFileHook( "lua/MarineVariantMixin.lua", "lua/gg_MarineVariantMixin.lua" , "post" )
-
+    ModLoader.SetupFileHook( "lua/ExoVariantMixin.lua", "lua/gg_ExoVariantMixin.lua" , "post" )
     -- GUI & HUD tweaks
     
     -- Outline for power-ups
